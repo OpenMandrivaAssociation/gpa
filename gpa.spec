@@ -1,7 +1,7 @@
 Summary:	The GNU Privacy Assistant
 Name:		gpa
 Version:	0.7.0
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL
 URL:		http://www.gnupg.org/related_software/gpa/
 Group:		File tools
