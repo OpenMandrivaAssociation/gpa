@@ -39,7 +39,7 @@ rm -fr %{buildroot}
 
 # menu entry
 mkdir -p %buildroot%{_datadir}/applications/
-cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{buildroot}.desktop
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
