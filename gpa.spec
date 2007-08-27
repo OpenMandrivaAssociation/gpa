@@ -39,14 +39,15 @@ rm -fr %{buildroot}
 
 # menu entry
 mkdir -p %{buildroot}%{_menudir}
-cat > %{buildroot}%{_menudir}/%{name} <<EOF
-?package(%{name}): \
- command="%{_bindir}/gpa" \
- icon="%{name}.png" \
- title="GNU Privacy Assistant" \
- longtitle="Graphical User Interface for GnuPG" \
- needs="x11" \
- section="System/Other"
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{buildroot}.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=%{_bindir}/gpa 
+Icon=%{name}.png 
+Name=GNU Privacy Assistant 
+Comment=Graphical User Interface for GnuPG 
+Categories=Utility;System;
 EOF
 
 # icons
@@ -71,7 +72,7 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{_datadir}/gpa
 
-%{_menudir}/*
+%{_datadir}/applications/mandriva-*.desktop
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
