@@ -38,7 +38,7 @@ rm -fr %{buildroot}
 %makeinstall_std
 
 # menu entry
-mkdir -p %{buildroot}%{_menudir}
+mkdir -p %{_datadir}/applications/
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{buildroot}.desktop
 [Desktop Entry]
 Encoding=UTF-8
