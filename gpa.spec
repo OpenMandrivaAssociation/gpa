@@ -41,7 +41,6 @@ rm -fr %{buildroot}
 mkdir -p %buildroot%{_datadir}/applications/
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
-Encoding=UTF-8
 Type=Application
 Exec=%{_bindir}/gpa 
 Icon=%{name}.png 
