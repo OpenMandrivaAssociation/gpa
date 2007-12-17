@@ -5,7 +5,6 @@ Release:	%mkrel 5
 License:	GPL
 URL:		http://www.gnupg.org/related_software/gpa/
 Group:		File tools
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/%{name}/%{name}-%{version}.tar.gz
 Source1:	%{SOURCE0}.sig
