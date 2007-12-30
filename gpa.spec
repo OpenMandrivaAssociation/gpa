@@ -1,21 +1,17 @@
 Summary:	The GNU Privacy Assistant
 Name:		gpa
-Version:	0.7.0
-Release:	%mkrel 5
-License:	GPL
-URL:		http://www.gnupg.org/related_software/gpa/
+Version:	0.7.6
+Release:	%mkrel 1
+License:	GPLv2+
 Group:		File tools
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-
-Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/%{name}/%{name}-%{version}.tar.gz
+URL:		http://wald.intevation.org/projects/gpa/
+Source0:	http://wald.intevation.org/frs/download.php/350/%{name}-%{version}.tar.bz2
 Source1:	%{SOURCE0}.sig
-Source10:	%{name}-32.png
-Source11:	%{name}-16.png
-
 BuildRequires:	gnupg
 BuildRequires:	gpgme-devel >= 0.4.3
 BuildRequires:	gtk+2-devel
 Requires:	gnupg
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The GNU Privacy Assistant is a graphical user interface for the
@@ -29,50 +25,41 @@ Install this package if you want to have an easy interface for GnuPG.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x \
+	--disable-rpath
 %make
 
 %install
 rm -fr %{buildroot}
-
 %makeinstall_std
 
 # menu entry
-mkdir -p %buildroot%{_datadir}/applications/
-cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+mkdir -p %{buildroot}%{_datadir}/applications/
+cat << EOF > %{buildroot}%{_datadir}/applications/%{name}.desktop
 [Desktop Entry]
 Type=Application
-Exec=%{_bindir}/gpa 
-Icon=%{name}.png 
-Name=GNU Privacy Assistant 
-Comment=Graphical User Interface for GnuPG 
-Categories=Utility;System;
+Exec=%{_bindir}/gpa
+Icon=%{name}
+Name=GNU Privacy Assistant
+Comment=Graphical User Interface for GnuPG
+Categories=GTK;System;
 EOF
-
-# icons
-install -D -m 0644 gpa-logo-48x48.png %{buildroot}%{_liconsdir}/%{name}.png
-install -D -m 0644 %{SOURCE10}        %{buildroot}%{_iconsdir}/%{name}.png
-install -D -m 0644 %{SOURCE11}        %{buildroot}%{_miconsdir}/%{name}.png
 
 %find_lang %{name}
 
 %post
-%update_menus
+%{update_menus}
  
 %postun
-%clean_menus
+%{clean_menus}
 
 %clean
 rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc AUTHORS COPYING ChangeLog README README-alpha THANKS TODO
+%doc AUTHORS ChangeLog README README-alpha THANKS TODO
 %{_bindir}/*
 %{_datadir}/gpa
-
-%{_datadir}/applications/mandriva-*.desktop
-%{_iconsdir}/%{name}.png
-%{_liconsdir}/%{name}.png
-%{_miconsdir}/%{name}.png
-
+%{_datadir}/applications/*.desktop
+%{_datadir}/pixmaps/%{name}.png
