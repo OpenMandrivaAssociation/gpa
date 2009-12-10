@@ -1,12 +1,11 @@
 Summary:	The GNU Privacy Assistant
 Name:		gpa
-Version:	0.8.0
-Release:	%mkrel 2
+Version:	0.9.0
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		File tools
 URL:		http://wald.intevation.org/projects/gpa/
 Source0:	http://wald.intevation.org/frs/download.php/350/%{name}-%{version}.tar.bz2
-Source1:	%{SOURCE0}.sig
 BuildRequires:	gnupg
 BuildRequires:	gpgme-devel >= 0.4.3
 BuildRequires:	gtk+2-devel
