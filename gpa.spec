@@ -1,7 +1,7 @@
 Summary:	The GNU Privacy Assistant
 Name:		gpa
 Version:	0.9.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		File tools
 URL:		http://wald.intevation.org/projects/gpa/
