@@ -11,6 +11,7 @@ BuildRequires:	gnupg
 BuildRequires:	gpgme-devel >= 0.4.3
 BuildRequires:	gtk+2-devel
 BuildRequires:	libassuan-devel
+BuildRequires:	gettext-devel
 Requires:	gnupg
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
