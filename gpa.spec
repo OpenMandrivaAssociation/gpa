@@ -6,6 +6,7 @@ License:	GPLv2+
 Group:		File tools
 URL:		http://wald.intevation.org/projects/gpa/
 Source0:	http://wald.intevation.org/frs/download.php/350/%{name}-%{version}.tar.bz2
+Patch0:		gpa-0.9.0-assuan-2.0.patch
 BuildRequires:	gnupg
 BuildRequires:	gpgme-devel >= 0.4.3
 BuildRequires:	gtk+2-devel
@@ -23,8 +24,10 @@ Install this package if you want to have an easy interface for GnuPG.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
+autoreconf -fi
 %configure2_5x \
 	--disable-rpath
 %make
