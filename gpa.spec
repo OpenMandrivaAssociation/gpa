@@ -47,7 +47,7 @@ EOF
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc AUTHORS ChangeLog README README-alpha THANKS TODO
+%doc AUTHORS ChangeLog README THANKS TODO
 %{_bindir}/*
 %{_datadir}/gpa
 %{_datadir}/applications/*.desktop
