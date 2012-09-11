@@ -52,3 +52,4 @@ EOF
 %{_datadir}/gpa
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/%{name}.png
+%{_mandir}/man1/gpa.1.*
