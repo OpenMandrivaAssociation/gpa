@@ -1,19 +1,17 @@
 Summary:	The GNU Privacy Assistant
 Name:		gpa
-Version:	0.9.0
-Release:	%mkrel 4
+Version:	0.9.3
+Release:	1
 License:	GPLv2+
 Group:		File tools
 URL:		http://wald.intevation.org/projects/gpa/
-Source0:	http://wald.intevation.org/frs/download.php/350/%{name}-%{version}.tar.bz2
-Patch0:		gpa-0.9.0-assuan-2.0.patch
+Source0:	ftp://ftp.gnupg.org/gcrypt/gpa/%{name}-%{version}.tar.bz2
 BuildRequires:	gnupg
 BuildRequires:	gpgme-devel >= 0.4.3
 BuildRequires:	gtk+2-devel
 BuildRequires:	libassuan-devel
 BuildRequires:	gettext-devel
 Requires:	gnupg
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The GNU Privacy Assistant is a graphical user interface for the
@@ -25,16 +23,13 @@ Install this package if you want to have an easy interface for GnuPG.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
-autoreconf -fi
 %configure2_5x \
 	--disable-rpath
 %make
 
 %install
-rm -fr %{buildroot}
 %makeinstall_std
 
 # menu entry
@@ -51,21 +46,7 @@ EOF
 
 %find_lang %{name}
 
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%endif
- 
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%endif
-
-%clean
-rm -rf %{buildroot}
-
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog README README-alpha THANKS TODO
 %{_bindir}/*
 %{_datadir}/gpa
