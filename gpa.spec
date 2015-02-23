@@ -1,7 +1,7 @@
 Summary:	The GNU Privacy Assistant
 Name:		gpa
-Version:	0.9.3
-Release:	4
+Version:	0.9.7
+Release:	1
 License:	GPLv2+
 Group:		File tools
 URL:		http://wald.intevation.org/projects/gpa/
@@ -25,7 +25,7 @@ Install this package if you want to have an easy interface for GnuPG.
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--disable-rpath
 %make
 
