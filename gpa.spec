@@ -1,6 +1,6 @@
 Summary:	The GNU Privacy Assistant
 Name:		gpa
-Version:	0.9.7
+Version:	0.9.10
 Release:	1
 License:	GPLv2+
 Group:		File tools
@@ -47,7 +47,7 @@ EOF
 %find_lang %{name}
 
 %files -f %{name}.lang
-%doc AUTHORS ChangeLog README THANKS TODO
+%doc AUTHORS README THANKS TODO
 %{_bindir}/*
 %{_datadir}/gpa
 %{_datadir}/applications/*.desktop
