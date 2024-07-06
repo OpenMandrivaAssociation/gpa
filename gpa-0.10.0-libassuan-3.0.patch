@@ -1,0 +1,21 @@
+diff -up gpa-0.10.0/configure.ac.omv~ gpa-0.10.0/configure.ac
+--- gpa-0.10.0/configure.ac.omv~	2024-07-06 02:45:28.890672559 +0200
++++ gpa-0.10.0/configure.ac	2024-07-06 02:45:42.770827915 +0200
+@@ -52,8 +52,8 @@ AC_INIT([gpa],[mym4_full_version],[https
+ 
+ 
+ NEED_GPG_ERROR_VERSION=1.27
+-NEED_LIBASSUAN_API=2
+-NEED_LIBASSUAN_VERSION=2.4.2
++NEED_LIBASSUAN_API=3
++NEED_LIBASSUAN_VERSION=3.0.0
+ NEED_GPGME_API=1
+ NEED_GPGME_VERSION=1.9.0
+ 
+@@ -476,4 +476,4 @@ echo "
+ 
+         Revision:  mym4_revision  (mym4_revision_dec)
+         Platform:  $host
+-"
+\ No newline at end of file
++"
