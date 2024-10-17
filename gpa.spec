@@ -4,7 +4,7 @@ Version:	0.10.0
 Release:	2
 License:	GPLv2+
 Group:		File tools
-URL:		http://wald.intevation.org/projects/gpa/
+URL:		https://wald.intevation.org/projects/gpa/
 Source0:	https://gnupg.org/ftp/gcrypt/gpa/%{name}-%{version}.tar.bz2
 BuildRequires:	gnupg
 BuildRequires:	gpgme-devel >= 0.4.3
