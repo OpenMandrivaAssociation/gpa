@@ -6,6 +6,11 @@ License:	GPLv2+
 Group:		File tools
 URL:		https://wald.intevation.org/projects/gpa/
 Source0:	https://gnupg.org/ftp/gcrypt/gpa/%{name}-%{version}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gnupg
 BuildRequires:	gpgme-devel >= 0.4.3
 BuildRequires:	pkgconfig(gtk+-2.0)
