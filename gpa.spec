@@ -1,7 +1,7 @@
 Summary:	The GNU Privacy Assistant
 Name:		gpa
-Version:	0.10.0
-Release:	2
+Version:	0.11.1
+Release:	1
 License:	GPLv2+
 Group:		File tools
 URL:		https://wald.intevation.org/projects/gpa/
@@ -20,7 +20,7 @@ BuildSystem:	autotools
 Requires:	gnupg
 
 %patchlist
-gpa-0.10.0-libassuan-3.0.patch
+# dropped (no longer applies): gpa-0.11.1-libassuan-3.0.patch
 
 %description
 The GNU Privacy Assistant is a graphical user interface for the
